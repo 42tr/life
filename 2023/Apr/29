@@ -1,0 +1,122 @@
+## leetcode
+
+2423. Remove Letter To Equalize Frequency
+// @ 用于模式绑定
+// .. 与剩余部分 模式绑定
+```rust
+impl Solution {
+    pub fn equal_frequency(word: String) -> bool {
+        // all appear times
+        let mut cnts: Vec<_> = word.chars().fold(vec![0; 26], |mut acc, c| {
+            acc[c as usize - 'a' as usize] += 1;
+            acc
+        }).into_iter().filter(|&e| e != 0).collect();
+        cnts.sort_unstable();
+        match cnts.len() {
+            2 => cnts[0] == 1 || cnts[0] == cnts[1] - 1,
+            len @ 3.. => {
+                if cnts[0] != 1 {
+                    cnts[0] == cnts[len -1]-1 && cnts[0] == cnts[len-2]
+                } else if cnts[1] != 1 {
+                    cnts[1] == cnts[len-1]
+                } else {
+                    cnts[len-2] == 1 && cnts[len-1]<=2
+                }
+            }
+            _ => true
+        }
+    }
+}
+```
+
+## english
+
+amplify
+v.放大(声音等);扩大;增强;详述
+ampl大+ify表动词
+You can amplify your voice with a megaphone.
+
+warrent
+n.授权令(包括逮捕令、搜查令等);正当理由;凭证
+v.使正当
+Open up! It's the police, we have a warrent for your arrest!
+
+indigenous
+adj.土生土长的，本土的
+The giant panda is an animal which is indigenous to China.
+
+irritable
+adj.易怒的，急躁的
+He had been seated waiting for some time and was becoming irritable.
+
+jurisdiction
+n.司法权，审判权
+The thief escaped into Germany which wasn't within the French police's jurisdiction.
+
+conquer
+v.征服，攻克
+She finally conquered this mountain.
+
+jealousy
+n.妒忌，猜忌
+jealous妒忌的+y表名词
+He was full of jealousy as the girl received praise from the teacher.
+
+malicious
+adj.怀有恶意的，恶毒的
+malic诽谤+ious有...的
+He took malicious pleasure in watching the dog being tortured.
+
+predominance
+n.(数量上的)优势，居多
+There is a predominance of old people living in this community.
+
+coal
+n.煤
+He is holding a few pieces of coal.
+
+meadow
+n.草地
+There are a flock of sheep wandering around the meadow.
+
+susceptible
+adj.易受感染的;易受影响的;多情的
+Young children are susceptible to disease.
+
+coast
+n.海岸,海滨
+vi.沿海航行
+The view of the coast is amazing.
+
+proposal
+n.求婚
+The woman accepted his marriage proposal.
+
+sustainability
+n.[环境]可持续性
+This factory has invested(投资) in environment sustainability, adopting varous green technologies.
+
+atmosphere
+n.大气层;空气;氛围,气氛
+atmo蒸汽+sphere范围
+The Earth's atmosphere absorbs part of the sun's energy.
+
+maternal
+adj.母亲的,母性的;母方的,母系的
+matern母+al...的
+The crazy fans were showing their maternal love for the three boys.
+
+rein
+n.缰绳
+v.控制
+You should hold the reins to lead your horse.
+
+ultra
+n.过激分子
+The goat(山羊) is an ultra who takes extreme, aggressive measures to fight for his cause.
+
+smuggler
+n.走私者
+The fox's time as a gold smuggler is offically over!
+
+
