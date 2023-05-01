@@ -1,0 +1,102 @@
+## leetcode
+
+376. Time Needed to Inform All Employees
+func numOfMinutes(n int, headID int, manager []int, informTime []int) int {
+    g := map[int][]int{}
+    for i, m := range manager {
+        g[m] = append(g[m], i)
+    }
+    var dfs func(int) int
+    dfs = func(cur int) (res int) {
+        for _, neighbor := range g[cur] {
+            res1 := dfs(neighbor)
+            if res1 > res {
+                res = res1
+            }
+        }
+        return informTime[cur] + res
+    }
+    return dfs(headID)
+}
+
+
+## English
+
+assignment
+n.(课外)作业
+assign分配+ment名词后缀
+My teacher gave me a lot of assignments for the weekend.
+
+motion
+n.运动，移动
+mot=move移动+ion名词后缀
+The slow motion clearly shows how he dodges the bullets.
+
+interrogation
+n.审问
+The suspect remained silent thoughout the interrogation.
+
+mint
+n.薄荷,薄荷糖;造币厂
+v.铸造(硬币)
+Add hot water to mint leaves to make mint tea.
+
+foundation
+n.地基;基金会
+found基础+ation表名次
+A strong building needs a solid foundation.
+
+empirical
+adj.实证的,以观察或实验为根据的
+em在...中+piri实验,试验+cal形容词后缀
+Empirical studies focus more on observation rather than theory alone.
+
+metaphor
+n.暗喻,隐喻
+meta超过,改变+phor带来
+"This city is the heart of the country"; hear, "heart" is used as a metaphor.
+
+ponder
+v.仔细考虑,沉思
+pond重+er表名词
+Pondering what to eat every day can be a challenge with many options.
+
+malpractice
+n.失职
+mal坏,错误+practice实践
+A quill was left in his body due to the doctor's malpractice.
+
+mingle
+v.使混合,使相混;相交往,相往来
+The sounds of laughter and singing mingled in the evening air.
+
+intermittent
+adj.断断续续的,间歇的
+inter在...之间,相互+mitt=mit送,放出+ent...的
+The intermittent rain lasted for the entire day.
+
+arc
+n.弧;弧光
+The ball traveled in a perfect arc through the sky.
+
+constrain
+v.约束,限制
+The bird is constrained inside the cage.
+
+propeller
+n.螺旋桨;推进器
+pro向前+pell=pel推进+er表名词
+I've been trained to fly single propeller planes.
+
+attain
+vt.获得,得到;实现;达到(某种状态或情况)
+n.成就
+at一再+tain拿住
+I finally attained my driving license!
+
+disposition
+n.性情,性格;排列,部署
+dis分开+posit放+ion名词后缀
+He has an unhealthy disposition; he gets angry so easily.
+
+
