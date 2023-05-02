@@ -1,0 +1,108 @@
+## leetcode
+
+970. Powerful Integers
+
+```rust
+impl Solution {
+    pub fn powerful_integers(x: i32, y: i32, bound: i32) -> Vec<i32> {
+        let mut ans = std::collections::HashSet::new();
+
+        let mut val1 = 1;
+        loop {
+            let mut val2 = 1;
+            loop {
+                if val1 + val2 > bound {
+                    break;
+                }
+                ans.insert(val1 + val2);
+                val2 *= y;
+                if y == 1 {
+                    break;
+                }
+            }
+            val1 *= x;
+            if x == 1 || val1 > bound {
+                break;
+            }
+        }
+        ans.into_iter().collect::<Vec<_>>()
+    }
+}
+```
+
+## English
+
+marine
+adj.海洋的;航海的;海产的;海军的
+n.海军陆战队
+There're numerous forms of marine life in the sea.
+
+epidemic
+adj.流行性的,传染的
+n.传染病;(犯罪等的)盛行
+The whole family has been infected with epidemic flu.
+
+martyrdom
+n.殉难
+Jesus's martyrdom is considered the first in the history of Christianity.
+
+indicator
+n.指示器
+This software provides an indicator of the laptop's Internet speed.
+
+besiege
+v.围攻;困扰
+be使...成为+siege包围
+The police have besieged the building.
+
+operational
+adj.操作的,运转的
+The machine is operational, sir -- you can turn it on now.
+
+mobilize
+v.动员起来;动员;鼓动起
+Our teacher mobilized us to study harder for the exam.
+
+reshuffle
+v.再洗牌,改组,重新安排
+n.重新洗牌
+The dealer reshuffled the cards to make sure there was no mistake.
+
+magistrate
+n.法官
+magistr行政+ate表示人
+
+mock
+v.嘲笑;轻蔑,蔑视
+adj.不真诚的;伪造的
+n.模拟考试
+The big dog crawled on its belly, mocking the Corgi's short legs.
+
+mediation
+n.调解
+His mediation definitely helped to resolve their dispute.
+
+longitudinal
+adj.纵向的
+His trousers have longitudinal stripes, unlike his T-shirt.
+
+prospective
+adj.未来的;预期的
+prospect前景+ive形容词后缀
+The prospective parents are discussing what they will buy for their baby.
+
+pyramid
+n.金字塔
+
+mediator
+n.调停者
+
+interrogate
+v.审问,审讯
+
+graze
+v.(牲畜)吃草
+n.擦,擦伤
+Cows are grazing on the grass in the meadow.
+
+
