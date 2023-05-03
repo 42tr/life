@@ -1,0 +1,86 @@
+## leetcode
+
+1003. Check If Word Is Valid After Substitutions
+```go
+func isValid(s string) bool {
+    stack := []byte{}
+    for _, b := range []byte(s) {
+        n := len(stack)
+        if n >= 2 && b == 'c' && stack[n-1]=='b' && stack[n-2] == 'a' {
+            stack = stack[:n-2]
+            continue
+        }
+        stack = append(stack, b)
+    }
+    return len(stack) == 0
+}
+```
+
+## English
+
+eradicate
+v.消灭
+I have to eradicate the bugs from my apartment.
+
+attribute
+v.把...归因于
+Many people's success can be attributed to hard work and a bit of luck.
+
+manuscript
+n.手稿;底稿;手抄本
+This is the manuscript of a famous writer.
+
+corridor
+n.走廊,回廊,通道;狭长地带
+The doctors and nurses are talking in the corridor.
+
+fragility
+n.脆弱
+A major drawback of glass is its fragility.
+
+passage
+n.通道,走廊;段落
+People with suitcases are walking through the passage.
+
+irrespective
+adj.不考虑的,不顾的
+Bookstores should be open to everyone, irrespective of weather they are rich or poor.
+
+metphorical
+adj.隐喻的
+The gap between men and women is a metaphorical representation of gender differences.
+
+innovate
+v.创新,改革
+Jobs succeeded in innovating the style of smart mobile phones.
+
+bust
+n.半身塑像
+v.打碎;搜捕
+adj.破产的
+The bust of Pythagoras honors the great Greek mathematician.
+
+arithmetic
+n.算术;计算
+
+masculinity
+n.男性(气概)
+Strong muscles are one way to prove a man's masculinity.
+
+renowned
+adj.著名的
+The Eiffel Tower is renowned for its beauty and simplicity.
+
+monotony
+n.单调乏味,无聊
+The monotony of the math teacher's voice sent those students to sleep.
+
+lubrication
+n.润滑
+Oil provides great lubrication for machines, reducing friction between the cogs.
+
+refer
+v.参考;把...描述为
+When cooking a new recipe, I always refer to the cookbook.
+
+
