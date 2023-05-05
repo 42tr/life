@@ -1,0 +1,57 @@
+## leetcode
+
+2432. The Employee That Worked on the Longest Task
+
+```rust
+impl Solution {
+    pub fn hardest_worker(n: i32, logs: Vec<Vec<i32>>) -> i32 {
+        let (mut id, mut cost) = (logs[0][0], logs[0][1]);
+        for i in (1..logs.len()) {
+            let cos = logs[i][1] - logs[i-1][1];
+            if cos > cost || (cos == cost && logs[i][0] < id) {
+                id = logs[i][0];
+                cost = cos;
+            }
+        } 
+        id
+    }
+}
+```
+
+## English
+
+flatter
+v.阿谀,使高兴
+Thank you for your kind words. I'm flattered.
+
+multilateral
+adj.多国之间的
+A multilateral trade agreement beefed up the global economy.
+
+negligent
+adj.疏忽的,粗心大意的
+
+presentation
+n.演讲,演示;报告;介绍;颁奖仪式
+
+indifference
+n.冷淡,不关心
+He rolled his eyes to show his indifference.
+
+mansion
+n.官邸,公馆
+
+perseverance
+n.坚持不懈;毅力;韧性
+
+bakery
+n.面包房,面包店
+
+navigation
+n.导航
+
+restless
+adj.不安宁的;烦躁不安的,焦虑的
+
+morale
+n.士气,斗志
