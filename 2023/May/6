@@ -1,0 +1,125 @@
+## leetcode
+
+1419. Minimum Number of Frogs Croaking
+
+```go
+func minNumberOfFrogs(croakOfFrogs string) int {
+    max := 0
+    cur := 0
+    m := map[byte]int{}
+    for _, b := range []byte(croakOfFrogs) {
+        switch b {
+            case 'c':
+                cur++
+                if cur > max {
+                    max = cur
+                }
+                m['c']++
+            case 'r':
+                if m['c'] == 0 {
+                    return -1
+                }
+                m['c']--
+                m['r']++
+            case 'o':
+                if m['r'] == 0 {
+                    return -1
+                }
+                m['r']--
+                m['o']++
+            case 'a':
+                if m['o'] == 0 {
+                    return -1
+                }
+                m['o']--
+                m['a']++
+            case 'k':
+                if m['a'] == 0 {
+                    return -1
+                }
+                m['a']--
+                cur--
+            default:
+                return -1
+        }
+    }
+    for _, cnt := range m {
+        if cnt > 0 {
+            return -1
+        }
+    }
+    return max
+}
+```
+
+## English
+
+compensate
+vt.赔偿;给...报酬
+He should be compensated for his work-related injury.
+
+genuine
+adj.真正的;真诚的;真的
+A genuine friend will always be by your side.
+
+entail
+vt.使必需,限定继承
+n.限定继承权
+Being a professor entails giving lectures, marking papers and supervising exams.
+
+oak
+n.栎树,橡树
+There is a bench under the grand oak tree.
+
+midwife
+n.接生婆,助产士;促成因素
+v.接生;促成
+The midwife is helping deliver the woman's baby.
+
+elite
+n.精英
+Only a few elite can make it to the top of the pyramid.
+
+naivety
+n.天真
+Her naivety in trying to catch the bubbles is so cute!
+
+missionary
+n.传教士
+He travelled around the world as a missionary.
+
+appropriate
+adj.合适的,适当的
+v.挪用;拨款;私占
+A gentle handshaking is appropriate when greeting someone for the first time.
+
+intervention
+n.调停;干涉,干预
+
+prescribe
+vt.给...开药;命令,指示
+The doctor prescribed me some medicine for my cold.
+
+controversy
+n.争论,辩论
+Which kind of flavor is more delicious? There was a controversy over the result.
+
+momentous
+adj.重要的
+Their wedding day is a momentous occasion in their lives.
+
+trillion
+num.万亿
+
+frustration
+n.沮丧,不满
+The boy falls in great frustration because of his poor learning ability.
+
+noteworthy
+adj.值得注意的;显著的
+This must be a noteworthy painting because so many people are crowded around it.
+
+pupil
+n.小学生
+
+
