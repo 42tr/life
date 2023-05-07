@@ -1,0 +1,80 @@
+## leetcode
+
+1010. Pairs of Songs With Total Durations Divisible by 60
+
+```go
+func numPairsDivisibleBy60(time []int) int {
+    m := map[int]int{}
+    for _, tim := range time {
+        m[tim%60]++
+    }
+    total := 0
+    for tim, cnt := range m {
+        if tim == 0 || tim == 30 {
+            total += cnt * (cnt - 1)
+        } else {
+            total += cnt * m[60-tim]
+        }
+    }
+    return total / 2
+}
+```
+
+## English
+
+nominate
+v.提名;任命
+Five actors were nominated as Best Actor.
+
+colony
+n.殖民地
+Many African countries are former European colonies.
+
+lottery
+n.彩票;碰运气的事,难算计的事
+He was checking numbers on the TV to see if he would win the lottery.
+
+terrify
+vt.使害怕,使惊恐
+The boys were terrfied by the horror movie.
+
+namely
+adv.即,也就是
+She took two classes this morning, namely, English and maths.
+
+era
+n.时代
+These kinds of costumes were quite popular in the Victorian era.
+
+stack
+n.堆,一大堆
+v.堆积,堆放
+I've bought this entire stack of goods through e-shopping!
+
+monarchy
+n.君主政体
+In a monarchy, the country is ruled by a king or a queen.
+
+tap
+n.水龙头
+v.监听,窃听
+Water flows from the tap.
+
+debate
+n.辩论;讨论,争论
+v.辩论;议论
+The debate between the man and the woman is so fierce.
+
+nitrogen
+n.氮,氮气
+Nitrogen makes up most Earth's atmosphere.
+
+consolation
+n.安慰
+Her mother cooking her favorite meal was a nice consolation when she failed her exam.
+
+oar
+n.桨,橹
+They pulled on the oars to make the boat go faster.
+
+
