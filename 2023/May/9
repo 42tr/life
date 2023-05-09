@@ -1,0 +1,87 @@
+## leetcode
+
+2437. Number of Valid Clock Times
+
+```go
+func countTime(time string) int {
+    countHour := 0
+    countMinute := 0
+    for i := 0; i < 24; i++ {
+        hiHour := byte(i / 10)
+        loHour := byte(i % 10)
+        if (time[0] == '?' || time[0] == hiHour+'0') &&
+            (time[1] == '?' || time[1] == loHour+'0') {
+            countHour++
+        }
+    }
+    for i := 0; i < 60; i++ {
+        hiMinute := byte(i / 10)
+        loMinute := byte(i % 10)
+        if (time[3] == '?' || time[3] == hiMinute+'0') &&
+            (time[4] == '?' || time[4] == loMinute+'0') {
+            countMinute++
+        }
+    }
+    return countHour * countMinute
+}
+```
+
+## English
+
+hysterical
+adj.歇斯底里的,情绪激动的
+His hysterical behavior like tearing the paper apart is realyy scary.
+
+mow
+v.刈,收割庄稼
+n.干草堆
+With this machine, I can easily mow the lawn.
+
+obscenity
+n.猥琐下流;猥亵的话(或行为)
+He sat screaming obscenities because of the heavy traffic jam.
+
+revival
+n.复苏,复兴
+The tourist hotspot enjoyed a dramatic revival once the epidemic had faded away.
+
+negligible
+adj.微不足道的,可忽略不计的
+It seems as though the rabbit has a negligible impact on the tug of war.
+
+hypothetical
+adj.假设的,假定的
+The physicist proposed a hypothetical theory that an alien civilization does exist.
+
+harsh
+adj.刺耳的
+Stop scratching the blackboard! The harsh noise is driving them crazy.
+
+flourish
+vi.茂盛
+Plants flourish with enough sunlight.
+
+resistance
+n.阻力;抵抗;抵抗力;抵制
+Running with added resistance can be a good way to train runners.
+
+irrigation
+n.灌溉
+Irrigation helps provide grassland with water.
+
+ripe
+adj.熟的,成熟的
+You can pick up the red strawberry because it's ripe.
+
+militia
+n.民兵组织
+The militia fought for their country.
+
+opaque
+adj.不透明的;难懂的
+The window is made of opaque glass.
+
+oppress
+vt.压迫;使(心情等)沉重
+The poor employees are oppressed by their curel boss.
+
