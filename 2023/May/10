@@ -1,0 +1,85 @@
+## leetcode
+
+1015. Smallest Integer Divisible by K
+
+```go
+func smallestRepunitDivByK(k int) int {
+    // 如果 k 是偶数或者以 5 结尾，那么一定不存在这样的正整数，直接返回 -1。
+    if k % 2 == 0 || k % 5 == 0 {
+        return -1
+    }
+    // cur 代表当前的余数，初始值为 0，res 代表数字 1 的个数，初始值为 1。
+    cur, res := 0, 1
+    
+    // 不断计算下一个数字的余数，直到找到一个可行的解或者发现不存在可行的解。
+    for {
+        cur = (10 * cur + 1) % k
+        if cur == 0 {
+            return res
+        }
+        res++
+    }
+}
+```
+
+## English
+
+wardrobe
+n.衣橱;全部服装
+All my clothes are in this wardrobe.
+
+obsession
+n.着迷;着魔
+She has an obsession of taking selfies.
+
+hysteria
+n.歇斯底里
+There was a wave of mass hysteria on the football field.
+
+cape
+n.披肩;斗篷;岬,海岬,海角
+The little boy looks so cute in that red cape.
+
+operative
+n.特工;技工
+adj.运转着的,从事生产劳动的
+The operative took out his gun after he heard the command.
+
+niece
+n.侄女,外甥女
+My niece is my sibling's daughter.
+
+repute
+n.名声,荣誉
+vt.被认为,被称为
+She is a manager of excellent repute and is respected by all of her team.
+
+onset
+n.开始;攻击,袭击
+The referee's whistle indicates the onset of the game.
+
+wither
+v.枯萎,凋谢;萎缩
+The sunflowers in the field have withered in the sun.
+
+ordinary
+adj.普通的,平常的
+I'm just an ordinary man.
+
+digest
+v.消化
+n.摘要
+Many parts of your body are involved in digesting food.
+
+obsessive
+adj.强迫的
+I'm obsessive about pattern; I cannot bear any disorder.
+
+rectify
+v.纠正;修复
+I made a mistake, so I quickly rectified it.
+
+palm
+n.手掌,手心
+She showed me the flower in her palm.
+
