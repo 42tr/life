@@ -1,0 +1,68 @@
+## leetcode
+
+1016. Binary String With Substrings Representing 1 To N
+
+```go
+func queryString(s string, n int) bool {
+  m := len(s)
+  nums := map[int]bool{}
+  for i:=0; i<m; i++ {
+    cur := 0
+    for j:=i; j<m; j++ {
+      cur = cur*2 + int(s[j])-'0'
+      nums[cur]=true
+    }
+  }
+  for i:=1; i<=n; i++ {
+    if !nums[i] {
+      return false
+    }
+  }
+  return true
+}
+```
+
+
+## English
+
+apparently
+adv.显然
+Apparently, this chair is too small for the elephant.
+
+orthodox
+adj.正统的
+Confucianism is the orthodox thought in China.
+
+nursery
+n.托儿所
+I drop off my kids at the nursery before I go to work.
+
+obscurity
+n.晦涩
+He's troubled by the obscurity of the book, which is written in Old English.
+
+oppressive
+adj.压迫的
+Copernicus faced an oppressive society which, at the time, considered his theories ridiculous.
+
+essential
+adj.必不可少的,极其重要的;本质的;重要的;基本的
+n.要素;必需品
+Water, food and air are essential to life.
+
+tranquility
+n.安静,平静
+I prefer the tranquility of countryside to city life.
+
+optic
+adj.光学的
+Optic nerves transfer visual information from our eyes to our brain.
+
+advocacy
+n.主张;辩护
+His advocacy of environmental protection is echoed by many people across the globe.
+
+norm
+n.规范,标准;准则;模范
+The students should follows the norms of conduct for the school.
+
