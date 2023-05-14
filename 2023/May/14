@@ -1,0 +1,121 @@
+## English
+
+secretary
+n.秘书;部长,大臣
+The secretary takes phone calls, arranges meetings and takes care of general affairs.
+
+distraction
+n.使人分心的事物
+Texting while driving is a serious distraction for drivers, and can have serious consequences.
+
+optical
+adj.视觉的
+This optical illusion causes us to see two faces in the photo.
+
+withstand
+vt.忍受;抵挡
+We all have to withstand our own pressures in life.
+
+optimum
+adj.最适宜的;最佳的
+n.最佳条件;最适宜
+Do you know the optimum temperature for the fish?
+
+foe
+n.敌人,敌军
+The dog has been the cat's foe for a long time.
+
+urgency
+n.紧急;紧急的事
+She ran with a sense of urgency, afraid of being late for the meeting.
+
+paradigm
+n.范例,示范
+This picture showed the basic paradigm of the family tree.
+
+reckless
+adj.鲁莽的,不顾后果的
+It is reckless for the driver to be driving while texting on the phone.
+
+harness
+n.挽具,马具
+vt.治理(河流等)
+A harness is fastened around the horse's head and body.
+
+temporal
+adj.现世的,世俗的
+The monk takes much delight in temporal pleasures.
+
+being
+n.存在;生物
+The universe came into being as a result of big bang.
+
+parachute
+n.降落伞
+The fox uses a parachute to descend.
+
+assure
+vt.向...保证,使确信
+I can assure you that the dog will be well cared for.
+
+
+## leetcode
+
+```go
+type PriorityQueue [][]int
+
+func (pq PriorityQueue) Len() int {
+    return len(pq)
+}
+func (pq PriorityQueue) Less(i, j int) bool {
+    return pq[i][0] > pq[j][0]
+}
+func (pq PriorityQueue) Swap(i, j int) {
+    pq[i], pq[j] = pq[j], pq[i]
+}
+func (pq *PriorityQueue) Push(x interface{}) {
+    item := x.([]int)
+    *pq = append(*pq, item)
+}
+func (pq *PriorityQueue) Pop() interface{} {
+    old := *pq
+    n := len(old)
+    item := old[n-1]
+    *pq = old[:n-1]
+    return item
+}
+
+func rearrangeBarcodes(barcodes []int) []int {
+    count := make(map[int]int)
+    for _, b := range barcodes {
+        count[b]++
+    }
+    q := &PriorityQueue{}
+    heap.Init(q)
+    for k, v := range count {
+        heap.Push(q, []int{v, k})
+    }
+    n := len(barcodes)
+    res := make([]int, n)
+    for i := 0; i < n; i++ {
+        p := heap.Pop(q).([]int)
+        cx, x := p[0], p[1]
+        if i == 0 || res[i-1] != x {
+            res[i] = x
+            if cx > 1 {
+                heap.Push(q, []int{cx - 1, x})
+            }
+        } else {
+            p2 := heap.Pop(q).([]int)
+            cy, y := p2[0], p2[1]
+            res[i] = y
+            if cy > 1 {
+                heap.Push(q, []int{cy - 1, y})
+            }
+            heap.Push(q, []int{cx, x})
+        }
+    }
+    return res
+}
+```
+
