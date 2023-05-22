@@ -1,0 +1,109 @@
+## English
+
+atlas
+n.地图集
+
+inherent
+adj.生来就有的;内在的,固有的
+The baby girl has an inherent love of beauty.
+
+humiliation
+n.耻辱
+He faces the humiliation of having to apologize openly for cheating in the exam.
+
+intensive
+adj.加强的
+The intensive study for the college entrance exam made him exhausted.
+
+overhaul
+n.大修;彻底革新
+vt.解体检修,大修
+His old car will need a complete overhaul after the accident.
+
+cognition
+n.认知
+Developing moral cognition is as important as acquiring knowledge.
+
+tutor
+n.家庭教师,指导教师
+v.当...的家庭教师
+The tutor is helping the little boy with his homework.
+
+factual
+adj.事实的
+This book contains factual information about science.
+
+ultimately
+adv.最终,最后
+
+panoramic
+adj.全景的
+
+cardinal
+adj.基本的;主要的
+n.红衣主教;基数
+Cardinal numbers are numbers that tell you how many things there are in a group.
+
+solitude
+n.孤独
+I am in solitude. My shadow is my only friend.
+
+cue
+n.球杆
+vt.给...提示
+While playing billiards, you should hit the ball with a cue.
+
+paralyze
+vt.使瘫痪;使麻痹;使不能活动
+The boy is paralyzed but still feeling positive about life.
+
+contrast
+n.差异;对照,对比
+v.对照,对比
+In chess, the contrast between black and white is easy to see.
+
+parrot
+n.鹦鹉
+Some parrots can talk just like a person.
+
+ordeal
+n.严峻的考验,苦难的经历,折磨
+It will be a big ordeal getting to the middle of the maze.
+
+needle
+n.针;针状物;指针
+All you need to sew clothing is a needle and thread.
+
+
+## leetcode
+
+1090. Largest Values From Labels
+
+```go
+func largestValsFromLabels(values []int, labels []int, numWanted int, useLimit int) int {
+    n := len(values)
+    idx := make([]int, n)
+    for i := 0; i < n; i++ {
+        idx[i] = i
+    }
+    sort.Slice(idx, func(i, j int) bool {
+        return values[idx[i]] > values[idx[j]]
+    })
+
+    ans, choose := 0, 0
+    cnt := make(map[int]int)
+    for i := 0; i < n; i++ {
+        label := labels[idx[i]]
+        if cnt[label] == useLimit {
+            continue
+        }
+        choose++
+        ans += values[idx[i]]
+        cnt[label]++
+        if choose == numWanted {
+            break
+        }
+    }
+    return ans
+}
+```
