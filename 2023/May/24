@@ -1,0 +1,104 @@
+## English
+
+illuminate
+vt.照亮;阐释;说明
+The torch illuminated his face in the dark.
+
+chronicle
+n.编年史,年代记,记录
+v.记录,把...载入编年史
+This ancient Chinese chronicle is a record of past events.
+
+correlate
+v.(使)相关联
+The chart shows that level of income correlates with the level of education.
+
+arouse
+vt.唤起
+Being aroused from sleep is the beginning of his day.
+
+olive
+n.橄榄;橄榄树
+adj.橄榄色的
+The best cooking oil is made from olives.
+
+parasite
+n.寄生虫;靠他人为生的人
+Bedbugs are a kind of horrible parasite; they feed on human blood.
+
+delicacy
+n.精致;优雅
+The dessert has both delicacy and deliciousness.
+
+federal
+adj.联邦政府的;联邦制的
+This building is the sign of the federal government of the USA.
+
+partisan
+n.党羽;虔诚信徒
+adj.偏袒的;盲目推崇的
+These two partisans attempt to cooperate with each other rather than competing.
+
+lecturer
+n.演讲者,讲师
+The lecturer is giving a speech to a large audience.
+
+patrol
+n.巡逻兵
+v.巡逻;巡查,巡游
+The patrols are searching the ruins after the war.
+
+integration
+n.融合,整合
+The integration of AI will revolutionize the automotive industry.
+
+parole
+n.假释;特别口令
+v.有条件释放,假释
+When on parole, a released prisoner must not break the conditions.
+
+migrate
+v.迁徙;迁移
+Some birds migrate south for the winter.
+
+
+## leetcode
+
+1377. Frog Position After T Seconds
+
+```go
+func frogPosition(n int, edges [][]int, t int, target int) float64 {
+    G := make([][]int, n+1)
+    for i := 0; i <= n; i++ {
+        G[i] = make([]int, 0)
+    }
+    for _, e := range edges {
+        G[e[0]] = append(G[e[0]], e[1])
+        G[e[1]] = append(G[e[1]], e[0])
+    }
+    seen := make([]bool, n+1)
+    return dfs(G, seen, 1, t, target)
+}
+
+func dfs(G [][]int, seen []bool, i int, t int, target int) float64 {
+    nxt := len(G[i])
+    if i > 1 {
+        nxt -= 1
+    }
+    if t == 0 || nxt == 0 {
+        if i == target {
+            return 1.0
+        } else {
+            return 0.0
+        }
+    }
+    seen[i] = true
+    ans := 0.0
+    for _, j := range G[i] {
+        if !seen[j] {
+            ans += dfs(G, seen, j, t - 1, target)
+        }
+    }
+    return ans / float64(nxt)
+}
+```
