@@ -1,0 +1,131 @@
+## English
+
+rehearsal
+n.排练,排演;叙述,详述
+The four girls are having a rehearsal now.
+
+illumination
+n.照明
+il 一再 + lumin 光 + ation 名词后缀
+The lights amongst the trees provided an illumination to the street.
+
+unfold
+v.展开,伸展
+He unfolds th amp to see which way to go next.
+
+feminist
+n.男女平等主义者,女权扩张论者
+adj.主张男女平等的,女权主义的
+Feminists call for equal rights for women and girls.
+
+symposium
+n.专题报告会
+Let's hold a symposium to talk about how to improve government policy.
+
+ecological
+adj.生态的,生态学的
+We need to maintain an ecological balance between humans and nature.
+
+administrative
+adj.行政的,管理的
+She was busy with administrative work all day.
+
+pedal
+n.踏板
+v.蹬脚踏板
+adj.脚踏的
+The car will slow down when you put your foot on the pedal.
+
+grasp
+vt.抓住,抓紧;领会,理解
+n.紧握
+The baby grasped his mother's finger.
+
+instructor
+n.指导者,教员,教练
+The driving instructor is helping his student learn how to back a car.
+
+eradication
+n.根除
+They hoped that the eradication of weeds across the field would yield a better crop.
+
+sail
+vi.航行
+n.帆
+The big boat sails off into the sunset.
+
+magnetic
+adj.有磁性的;有吸引力的
+The iron balls are attracted to the magnet because it is magnetic.
+
+figure
+n.身形;数字
+v.想出
+She maintains her figure by working out regularly.
+
+productivity
+n.效率;生产力;多产
+The productivity of the machine is ten bottles a day.
+
+grain
+n.谷物,谷粒
+v.使成粒状
+There is a bag of grains on the table.
+
+credibility
+n.可靠性,可信性,确实有效性
+The application gains its credibility by its effect on the enhancement of users' English.
+
+barren
+adj.贫瘠的
+This land is so barren that nothing can grow here.
+
+pathetic
+adj.可怜的;不足的
+My dog shows a pathetic look when begging for food.
+
+stroke
+n.击打;一击,一次,一举;中风;笔画
+v.轻抚
+He hit the ball cleanly with a beautiful stroke.
+
+
+## leetcode
+
+1439. Find the Kth Smallest Sum of a Matrix With Sorted Rows
+
+```go
+func kthSmallest(mat [][]int, k int) int {
+
+    a := []int{0}
+
+    for _, row := range mat {
+
+        b := make([]int, 0, len(a)*len(row)) // 预分配空间
+
+        for _, x := range a {
+
+            for _, y := range row {
+
+                b = append(b, x+y)
+
+            }
+
+        }
+
+        sort.Ints(b)
+
+        if len(b) > k { // 保留最小的 k 个
+
+            b = b[:k]
+
+        }
+
+        a = b
+
+    }
+
+    return a[k-1]
+
+}
+```
