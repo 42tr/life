@@ -1,0 +1,75 @@
+## English
+
+radiation
+n.辐射
+Don't get close to radiation if you are not in a protective suit.
+
+mild
+adj.清淡的;温暖的;轻微的
+I would love a bowl of mild chicken soup right now.
+
+opt
+vi.选择
+She opted for music class because she just wasn't interested in any others.
+
+peg
+n.晾衣架
+v.限定(价格、工资等)
+I use pegs to make sure my washing stays on the line.
+
+incorporate
+v.包含;使并入
+The app update incorporate many new features and improvements.
+
+pioneer
+n.先锋,先驱
+vt.开辟,首倡
+He's a pioneer in climbing, that is, the first man to reach the summit.
+
+wage
+n.工资,薪水
+vt.开展,进行(战争、运动)
+The worker was so happy when she got her wages.
+
+rear
+adj.背面的
+n.后部
+v.抚养
+I could only see a tree in my rear-view mirror.
+
+swamp
+n.沼泽
+v.使困惑,压倒
+Crocodiles often live in swamps.
+
+dean
+n.(大学的)学院院长;系主任;牧师
+The dean of our department is reading in his office.
+
+distortion
+n.扭曲,变形
+He is laughing at the distortion of his reflection.
+
+patriotism
+n.爱国主义,爱国心,爱国精神
+He has a strong sense of patriotism.
+
+## leetcode
+
+2455. Average Value of Even Numbers That Are Divisible by Three
+
+```go
+func averageValue(nums []int) int {
+    sum, cnt := 0, 0
+	for _, num := range nums {
+        if num % 2 == 0 && num % 3 == 0 {
+            sum += num
+            cnt++
+        }
+    }
+    if cnt == 0 {
+        return 0
+    }
+    return sum/cnt
+}
+```
