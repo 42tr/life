@@ -1,0 +1,103 @@
+## leetcode
+
+1110. Delete Nodes And Return Forest
+
+```go
+func delNodes(root *TreeNode, to_delete []int) []*TreeNode {
+    del := map[int]bool{}
+    for _, de := range to_delete {
+        del[de] = true
+    }
+    arr := []*TreeNode{}
+    var dfs func(node *TreeNode, isHead bool)
+    dfs = func(node *TreeNode, isHead bool) {
+        if node == nil {
+            return
+        }
+        if isHead && !del[node.Val] {
+            arr = append(arr, node)
+        }
+        if node.Left != nil {
+            if del[node.Left.Val] {
+                dfs(node.Left, del[node.Val])
+            }
+        }
+        
+    }
+}
+```
+
+## English
+
+vacancy
+n.(职位)空缺
+There's a job vacancy - let me apply!
+
+peep
+v.窥视,偷看
+n.窥看,隐约看见
+Peep through the window shades to see what they are doing.
+
+shepherd
+n.牧羊人
+v.带领
+The shepherd is herding his sheep on the grassland.
+
+governor
+n.州长;主管,负责人
+The governor is giving a speech.
+
+perpetual
+adj.永远的,永恒的
+There is perpetual snowfall on this mountain as it snows all year round.
+
+circumstance
+n.条件;情况;客观环境
+Success depends on many different circumstances.
+
+chest
+n.胸膛,胸部
+He likes to show off his chest muscles.
+
+ail
+v.折磨
+His back has been ailing him for many years.
+
+breakdown
+n.故障,损坏;倒塌,崩溃;(关系)破裂
+His old car had a breakdown on the road.
+
+permeate
+v.弥漫;普及;渗透
+The sweet smell of the flowers permeated the entire room.
+
+phase
+n.(月亮的)变相;盈亏;方面;阶段,时期
+The moon will pass through all of its phases in about one month.
+
+adhere
+v.黏附;附着,粘在...上;遵守;坚持
+I used glue to adhere the poster to the wall.
+
+patronage
+n.赞助;惠顾
+Thanks to the patronage, he could finish his education on time.
+
+incidence
+n.发生率
+The incidence of heart disease goes up as people get older.
+
+sway
+v.摇摆,摇曳;动摇(某人)
+n.摇摆
+The willow tree swayed gently in the breeze.
+
+perpetuate
+vt.使永久存在,使不朽
+As long as there were still clean plates, he perpetuated the mess in the kitchen.
+
+nonetheless
+adv.尽管如此,仍然
+He hates vegetables but, due to their health benefits, eats them nonetheless.
+
+
