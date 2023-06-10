@@ -1,0 +1,249 @@
+## English
+
+inertia
+n.惯性;惰性
+When the bus stopped, inertia made passengers all lean forward.
+
+particularly
+adv.特别地,尤其
+This guy particularly likes eating meat.
+
+infection
+n.感染;传染病
+This poor guy has a really terrible lung infection.
+
+aristocratic
+adj.贵族的
+Being from an aristocratic family, he stood out when among common people.
+
+foil
+n.锡箔纸;衬托
+v.挫败;使受挫败
+The dark chocolate cakes in foil cups are put on the table.
+
+pilgrimage
+n.朝圣之旅
+They were on a pilgrimage to the Potala Palace in Tibet.
+
+stream
+n.小河,溪;流
+v.流出
+There is a small stream running through the forest.
+
+exposure
+n.暴露;揭露,揭发
+Because of exposure to the sun, the corn is burnt.
+
+chancellor
+n.(美国)大学校长
+The college chancellor is awarding degree certificates to the graduates.
+
+eager
+adj.热切的,渴望的,急不可耐的
+The kids are eager to eat the cake on the table.
+
+courageous
+adj.勇敢的,英勇的,有胆量的
+The courageous prince is fighting against the fierce dragon.
+
+petrochemical
+n.石油化学制品
+I've worked in petrochemical industry for years and I'm familiar with the process.
+
+radiant
+adj.光芒四射的,绚丽的
+The sun warms the clouds to a radiant glow.
+
+toxic
+adj.有毒的
+n.毒物
+The green stuff in the bottle is toxic.
+
+segregate
+v.分开,隔离,进行种族隔离
+The police segregated the two rival camps of protesters.
+
+arrogance
+n.傲慢态度
+The peacock's arrogance gives much offense to the little robin journalist.
+
+tone
+n.语气
+The little boy learned to use a more polite tone while speaking to his mother.
+
+impromptu
+adj.即兴的
+adv.即兴
+n.即兴之作
+He composed an impromptu poem within seven paces.
+
+scenario
+n.(可能发生的)事态,情况;剧情梗概;设想
+He is thinking about the worst case scenario as he is late for work.
+
+persecution
+n.迫害
+Animals not belonging to the cat family are facing persecution and being imprisoned.
+
+relic
+n.遗迹
+The temple is a relic of the ancient civilization.
+
+approximately
+adv.近似的,大约
+Pi is approximately equal to 3.1416.
+
+radiator
+n.散热器;暖气片
+My car broke down because my radiator ran out of fluid.
+
+signify
+vt.表示,说明
+vi.具有重要性
+Traffic signs signify all kinds of rules you must follow on the road.
+
+pharmaceutical
+adj.制药的,药物的
+n.药物
+This ancient medical book introduces some pharmaceutical knowledge.
+
+resign
+v.辞职,放弃
+After much consideration, the employee resigned from his job.
+
+lure
+v.以诱饵吸引
+n.诱惑物
+I lure fish by putting worms on my fishing pole.
+
+compassionate
+adj.有同情心的
+She's a compassionate girl who gave her own money to the beggar.
+
+render
+v.提供,给予;(以某种方式)表达,表现
+The kind teacher rendered a lot of financial assistance to her poor students.
+
+perfume
+n.香水;香气
+vt.使充满芳香;洒香水于
+She uses a refrigerator to store her perfumes.
+
+rape
+n.强奸
+The man is convicted of rape and will be heavily punished.
+
+bureaucracy
+n.官僚主义;政府机构
+The bureaucracy always makes people go through unnecessary procedures.
+
+clue
+n.线索;提示;暗示
+vt.为...提供线索
+The paw print is a big clue in the case.
+
+ranch
+n.大农场
+The cattle on the ranch were free to graze and to roam.
+
+radioactivity
+n.放射性,放射现象
+He wears a red radiation suit to protect himself from the radioactivity.
+
+affix
+v.粘上;署名;将罪责加之于
+n.词缀;附加物
+The girl affixed her new award to the wall.
+
+vary
+v.相异;(根据情况)变化;使多样化
+Each cup on the table varies in color and size.
+
+predatory
+adj.捕食生物的
+We little fish can do nothing when faced with the predatory hawk.
+
+reckon
+vt.估算;认为
+The agent reckoned the house was worth about 500,000 yuan.
+
+counsel
+n.律师,法律顾问;忠告
+vt.劝告,提议
+The man speaking to the judges is the counsel for the defense.
+
+reciprocal
+adj.相互的,互惠的
+Reciprocal relationships contribute to a good neighborhood.
+
+bizarre
+adj.稀奇古怪的
+This bizarre creature among the other fish really caught my eye.
+
+universal
+adj.普遍的,全体的;通用的
+n.普遍原则
+Electronic devices such as cellphones are universal now.
+
+imperative
+adj.必要的;急需的
+n.命令;必要的事;义务;驱使
+It is imperative to call 119 if your house is on fire.
+
+separation
+n.分离
+Their separation made them both extermely sad.
+
+mentor
+n.导师;指导
+My mentor in college gave me lots of advice on how to revise my paper.
+
+liberal
+n.开明的人
+adj.自由主义的
+The new king is a liberal who accepts different behaviors and opinions.
+
+Olympiad
+n.奥林匹亚周期,四年周期
+An Olympiad is a four-year period between two Summer Olympics.
+
+refute
+vt.驳斥
+She just wanna refute everything by saying "no".
+
+
+## Leetcode
+
+1170. Compare Strings by Frequency of the Smallest Character
+
+```go
+func numSmallerByFrequency(queries []string, words []string) (ret []int) {
+    getVal := func(str string) (cnt int) {
+        b := 'z'
+        for _, by := range str {
+            if by < b {
+                b = by
+                cnt = 0
+            }
+            if by == b {
+                cnt++
+            }
+        }
+        return
+    }
+
+    m := map[int]int{}
+    for _, word := range words {
+        m[getVal(word)]++
+    }
+    arr := [12]int{}
+    for i:=10;i>=0;i-- {
+        arr[i] = arr[i+1]+m[i]
+    }
+    
+    for _, query := range queries {
+        ret = append(ret, arr[getVal(query)+1])
+    }
+    return
+}
+```
