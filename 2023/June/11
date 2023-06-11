@@ -1,0 +1,100 @@
+## English
+
+imperative
+adj.必要的;急需的
+n.命令;必要的事;义务;驱使
+It is imperative to call 119 if your house is on fire.
+
+predatory
+adj.捕食生物的
+We little fish can do nothing when faced with the predatory hawk.
+
+havoc
+n.(天灾、战争等造成的)大毁灭
+vi.损毁
+vt.严重破坏
+The tornado has wreaked havoc on the city.
+
+curve
+v.使弯曲
+n.曲线
+Her lips curved in a smile.
+
+prosperous
+adj.富裕的;茁壮成长的
+Look at his fancy cat! He might be a prosperous man.
+
+outset
+n.开始
+The athlete in red was in the lead since the outset.
+
+ratify
+vt.批准,认可,签署生效
+My cat has ratified the treaty and agreed to let me feed him.
+
+perceive
+v.意识到
+Hearing a strange noise from the bush, he perceived danger and prepared to fight.
+
+pasture
+n.牧场,草地;生活状况
+What a beautiful sight - cows grazing peacefully on a green pasture.
+
+merchandise
+n.商品,货品
+v.推销,经营
+The merchandise in this store is neatly folded and well presented.
+
+pretext
+n.借口,托词
+The pupil asked for leave on the pretext of having a stomachache.
+
+perception
+n.洞察力,理解力
+Perception is the reflection of intelligence.
+
+derail
+vi.脱轨
+The toy train accidentally derailed and overturned.
+
+propel
+v.推进,推动,激励
+He used a paddle to propel the boat.
+
+ratification
+n.批准
+They have a four-fifths majority in favor of the ratification of the treaty.
+
+urgent
+adj.急迫的
+The cat's most urgent need now is to pee.
+
+proximate
+adj.直接的;最接近的
+The storm was the proximate cause of the flight delay.
+
+rattle
+n.格格声;发出嘎嘎声的儿童玩具;(响尾蛇)音响器官
+v.(使)发出格格声;(人或车)疾驰;使烦扰
+The baby loved the sound of the rattle.
+
+## Leetcode
+
+1171. Remove Zero Sum Consecutive Nodes from Linked List
+
+```go
+func removeZeroSumSublists(head *ListNode) *ListNode {
+    h := &ListNode{Next: head}
+    m := map[int]*ListNode{}
+    for tmp, prefix:=h,0; tmp!= nil; tmp=tmp.Next {
+        prefix += tmp.Val
+        m[prefix] = tmp
+    }
+    for tmp, prefix:=h,0; tmp!= nil; tmp=tmp.Next {
+        prefix += tmp.Val
+        tmp.Next=m[prefix].Next
+    }
+    return h.Next
+}
+```
+
