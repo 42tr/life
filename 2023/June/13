@@ -1,0 +1,188 @@
+## English
+
+preside
+v.主持
+The head of the company presided over this business conference.
+
+propose
+vi.求婚
+vt.提议
+He proposed to his girlfriend with a diamond.
+
+referee
+n.裁判员,仲裁者
+The referee whistled to stop the game.
+
+predominant
+adj.占主导地位的;显著的
+The white pieces were predominant on the ches board, so I lost the game.
+
+explosion
+n.爆炸
+The firework explosions were amazing.
+
+publication
+n.出版,发行;出版物;公布
+Once the publication process is complete, the book will availabe to buy.
+
+scenic
+adj.景色优美的;舞台背景的,舞台的
+n.风景名胜
+These scenic islands are the perfect place to go traveling.
+
+reel
+n.卷盘
+v.感到震惊;眩晕;旋转
+She is winding cotton thread onto a reel.
+
+breast
+n.乳房
+She is checking her breast.
+
+predecessor
+n.前辈;(被取代的)原有事物
+He learned a lot from his experienced predecessor.
+
+beforehand
+adv.预先
+Dinner is ready when she arrives at the restaurant, because she ordered beforehand by phone.
+
+joint
+n.关节
+adj.联合的,共同的
+She felt a sudden pain in her knee joint.
+
+rectification
+n.改正
+The cat using the litter tray was evidence that its rectification training had been successful.
+
+profitable
+adj.有利润的
+Planting trees can be a profitable investment into your future.
+
+numerous
+adj.为数众多的,许多的
+The stadium is filled with numerous sports fans.
+
+prosecution
+n.起诉;起诉方,原告
+The cat is facing prosection over his attack on the poor rabbit.
+
+submerge
+v.沉没,淹没
+The car was almost submerged by the floodwater!
+
+deplete
+v.耗尽,用尽;使大大减少
+His energy level was depleted, because he didn't eat breakfast.
+
+prosper
+v.(生意等)成功;繁荣
+After struggling initially, his business began to prosper.
+
+psychiatry
+n.精神病治疗法
+Psychiatry can be very helpful for patients suffering from mental illness.
+
+displace
+v.取代,使离开原位
+The man feels depressed after being displaced in his job by a machine.
+
+poverty
+n.贫困,贫穷;贫乏
+Many people live in poverty nowadays.
+
+relevant
+adj.相关的,有关的;正确的,适宜的;贴切的
+Before you write an essay, you should always read some relevant books.
+
+depict
+v.描绘,描写
+This novel depicts a beautiful love story.
+
+reassurance
+n.再保证
+Consumers need some reassurance abount returning goods bought online.
+
+recede
+vi.退去;渐渐远去;逐渐减弱;(头发)从前向后渐少;向后倾斜
+As he got older, his hairline began to recede.
+
+levy
+v.征收(稅等)
+n.征税;税款
+The government levies a tax on him for his personal income.
+
+evolutionary
+adj.进化的,演进的
+The chart shows the evoluntionary process of phones.
+
+pest
+n.害虫;讨厌的人(或东西)
+Pests are those irritating and harmful insects.
+
+unprecedented
+adj.前所未有的,空前的,无前例的
+In 1903, the Wright Brothers made an unprecedented airplane flight.
+
+ambiguous
+adj.含糊不清的
+Do you see a vase or two faces? It's pretty ambiguous.
+
+slash
+v.砍,大幅度削减
+n.砍;砍痕
+A hooligan slashed the tires on people's cars with a blade.
+
+psychiatrist
+n.精神病医生;精神病学家
+The psychiatrist is recording her patient's preblems.
+
+endorse
+v.代言
+The celebrity is endorsing the brand's lipstick.
+
+patron
+n.老主顾;赞助人;支持者
+He is one of the restaurant's oldest patrons; he has been eating there for years.
+
+lift
+v.(使)升起,举起
+n.免费搭车
+She's lifting her baby up above her head.
+
+prosperous
+adj.富裕的;茁壮生长的
+Look at his fancy car! He might be a prosperous man.
+
+
+
+
+## Leetcode
+
+2475. Number of Unequal Triplets in Array
+
+```go
+func unequalTriplets(nums []int) int {
+    m := map[int]int{}
+    for _, num := range nums {
+        m[num]++
+    }
+    n := len(m)
+    arr := make([]int, n)
+    i := 0
+    for _, cnt := range m {
+        arr[i] = cnt
+        i++
+    }
+    sum := 0
+    for i:=0;i<n;i++ {
+        for j:=i+1;j<n;j++ {
+            for k:=j+1;k<n;k++ {
+                sum += arr[i]*arr[j]*arr[k]
+            }
+        }
+    }
+    return sum
+}
+```
