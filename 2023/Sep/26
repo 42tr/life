@@ -1,0 +1,103 @@
+## Leetcode
+
+2582.Pass the Pillow
+
+```go
+func passThePillow(n int, time int) int {
+  time %= 2 * (n-1)
+  if time < n {
+    return time+1
+  }
+  return 2*n - time -1
+}
+```
+
+## English
+
+dramatic
+adj.巨大的,突然地,急剧的;戏剧的,戏剧性的;引人注目的;逼真的,刺激的
+The dramatic decline of the stock value was a big blow for him.
+
+vulgar
+adj.粗俗的;下流的;平民的;通俗的
+n.平民;方言
+His behavior is so vulgar that nobody wants to approach him.
+
+mandate
+n.(联合国授权某国管理的)托管地
+v.授权
+This mandate was given to his country by the United Nations for peace.
+
+constituent
+adj.组成的; 有选举权的
+n.选民
+France is a constituent country of the EU.
+
+wicked
+adj.邪恶的,恶毒的
+This wicked man is slapping the elderly disabled man.
+
+rhetoric
+n.修辞学;浮夸的言语
+Rhetoric is the study of how to use words to convince people.
+
+dismantle
+v.拆除;拆开
+The building is being safely dismantled.
+
+retrieve
+v.取回,重新得到,挽回
+I went back to the theater to retrieve my nmberlla that I left there.
+
+alternation
+n.交替
+The alternation of the two colors forms an abstract pattern.
+
+dismay
+n.失望,沮丧
+v.使惊恐
+The student could not hide his dismay after failing th exam.
+
+tumble
+v.跌倒,摔下,滚下;(价格等)暴跌
+n.跌倒,摔倒
+The man tumbled off the bike and hurt his arm.
+
+carbobydrate
+n.【化】碳水化合物
+Carbohydrates are the main component of noodles, bread and steamed buns.
+
+comet
+n.彗星
+The comet is approaching the sun.
+
+amplification
+n.放大,扩大(力量、声音等)
+Loudspeakers provide amplification of the user's voice.
+
+ammunition
+n.弹药
+The soldier is well equipped with ammunition.
+
+subtlety
+n.微妙
+You have to scrutinize the subtleties of these two pictures to spot the differences.
+
+delusion
+n.错觉
+He is under the delusion that someone is sitting next to him.
+
+antagonist
+n.反派,反派角色
+In the astronaut cartoon, the robot is seen as the antagonist.
+
+convoy
+n.车队,船队
+v.护航,护送
+The two trucks are travelling in an armed policy convoy.
+
+allurement
+n.诱惑
+The carrot is an irresistible allurement for the donkey.
+
+
